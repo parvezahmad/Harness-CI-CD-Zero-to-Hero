@@ -113,7 +113,7 @@ data "aws_ami" "al2023" {
 # EC2 Instance
 resource "aws_instance" "demo" {
   ami                    = data.aws_ami.al2023.id
-  instance_type          = "t2.micro"
+  instance_type          = "m7i-flex.large"
   subnet_id              = aws_subnet.demo.id
   vpc_security_group_ids = [aws_security_group.demo.id]
 
